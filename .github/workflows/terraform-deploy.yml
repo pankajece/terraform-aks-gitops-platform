@@ -37,6 +37,9 @@ jobs:
       TF_STATE_CONTAINER: ${{ vars.TF_STATE_CONTAINER }}
     steps:
       - uses: actions/checkout@v4
+      - name: Check client Id 
+        run: 
+          echo "${{ vars.AZURE_CLIENT_ID }}"
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.5
